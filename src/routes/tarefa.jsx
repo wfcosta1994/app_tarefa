@@ -1,5 +1,7 @@
 import { Form, useLoaderData, useFetcher, } from "react-router-dom";
 import { getTarefa, updateTarefa } from "../tarefas";
+import apagar from "../assets/delete.svg"
+import editar from "../assets/editar.svg"
 
 export async function action({ request, params }) {
     let formData = await request.formData();
@@ -24,12 +26,12 @@ export default function Tarefa() {
 
     return (
         <div id="tarefa">
-            <div>
+            {/* <div>
                 <img
                     key={tarefa.avatar}
                     src={tarefa.avatar || null}
                 />
-            </div>
+            </div> */}
 
             <div>
                 <h1>
@@ -58,7 +60,9 @@ export default function Tarefa() {
 
                 <div>
                     <Form action="edit">
-                        <button type="submit">Editar</button>
+                        <button type="submit">
+                            <img src={editar} alt="error" />
+                        </button>
                     </Form>
                     <Form
                         method="post"
@@ -73,7 +77,9 @@ export default function Tarefa() {
                             }
                         }}
                     >
-                        <button type="submit">Apagar</button>
+                        <button type="submit">
+                            <img src={apagar} alt="error" />
+                        </button>
                     </Form>
                 </div>
             </div>
