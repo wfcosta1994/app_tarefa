@@ -59,23 +59,35 @@ export default function Tarefa() {
                 {tarefa.notes && <p>{tarefa.notes}</p>}
 
                 <div>
-                    <Form action="edit">
+                    <Form
+                        action="Editar"
+                    // onSubmit={(event) => {
+                    //     if (
+                    //         !confirm(
+                    //             "Deseja editar esse item?"
+                    //         )
+                    //     ) {
+                    //         event.preventDefault();
+                    //     }
+                    // }}
+                    >
                         <button type="submit">
                             <img src={editar} alt="error" />
                         </button>
                     </Form>
+
                     <Form
-                        method="post"
-                        action="destroy"
-                        onSubmit={(event) => {
-                            if (
-                                !confirm(
-                                    "Please confirm you want to delete this record."
-                                )
-                            ) {
-                                event.preventDefault();
-                            }
-                        }}
+                        //method="post"
+                        action="deletar"
+                    // onSubmit={(event) => {
+                    //     if (
+                    //         !confirm(
+                    //             "Deseja excluir esse item?"
+                    //         )
+                    //     ) {
+                    //         event.preventDefault();
+                    //     }
+                    // }}
                     >
                         <button type="submit">
                             <img src={apagar} alt="error" />

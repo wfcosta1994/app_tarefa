@@ -8,6 +8,8 @@ import Root, { loader as rootLoader, action as rootAction, } from "./routes/root
 import EditTarefa, { action as editAction, } from "./routes/edit";
 import { action as destroyAction } from "./routes/destroy";
 import Index from "./routes/index";
+import Deletar from './routes/deletar';
+import { Editar } from './routes/editar';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +34,7 @@ const router = createBrowserRouter([
       },
       { index: true, element: <Index /> },
       {
-        path: "tarefas/:tarefaId",
+        path: "tarefas/:tarefaId/:deletar/tarefaId",
         element: <Tarefa />,
         loader: tarefaLoader,
         action: tarefaAction,
@@ -44,9 +46,23 @@ const router = createBrowserRouter([
         action: editAction,
       },
       {
-        path: "tarefas/:tarefaId/destroy",
+        path: "tarefas/:tarefaId/:deletar/destroy",
         action: destroyAction,
         errorElement: <div>Oops! There was an error.</div>,
+      },
+      {
+        path: "tarefas/:tarefaId/Editar/edit",
+        element: <EditTarefa />,
+        loader: tarefaLoader,
+        action: editAction,
+      },
+      {
+        path: "tarefas/:tarefaId/deletar",
+        element: <Deletar />,
+      },
+      {
+        path: "tarefas/:tarefaId/Editar",
+        element: <Editar />,
       },
     ],
   },

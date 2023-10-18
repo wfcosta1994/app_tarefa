@@ -60,7 +60,7 @@ export default function Root() {
                         ></div>
                     </Form>
                     <Form method="post">
-                        <button type="submit">New</button>
+                        <button type="submit">Novo</button>
                     </Form>
                 </div>
                 <nav>
